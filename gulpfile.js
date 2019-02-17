@@ -66,7 +66,7 @@ const build = gulp.parallel(scripts,buildCss, buildFonts,buildJs,buildHtml,build
 
 function prefix() {
 	return gulp.src("assets/css/**/*.css")
-		.pipe(autoprefixer({browsers: ['> 1%', 'last 2 versions', 'firefox >= 4', 'iOS 7', ' ios_saf 8.1-8.4 ',  'edge 13']}))
+		.pipe(autoprefixer({browsers: ['> 1%', 'last 5 versions', 'firefox >= 4', 'iOS 7',  'ie 8']}))
 		.pipe(gulp.dest("assets/css"));
 }
 
