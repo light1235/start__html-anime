@@ -12,7 +12,7 @@ var gulp         = require('gulp'),
 
 //Compiled css
 function css_libs() {
-	return gulp.src(['assets/css/main.css','assets/css/header.css','assets/css/footer.css'])
+	return gulp.src(['assets/css/**/*'])
 		.pipe(cssnano())
 		.pipe(rename({ suffix: ".min" }))
 		.pipe(gulp.dest("assets/css/"))
@@ -33,10 +33,7 @@ function clean() {
 
 function buildCss() {
 	return  gulp.src([
-		'assets/css/main.min.css',
-		 'assets/css/header.min.css',
-		 'assets/css/footer.min.css',
-		'assets/css/normalize.css'
+		"assets/css/**/*.min.css"
 	])
 		.pipe(gulp.dest('dist/assets/css'));
 }
