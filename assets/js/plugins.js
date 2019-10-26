@@ -1,27 +1,22 @@
-// Avoid `console` errors in browsers that lack a console.
-(function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
+// Wrap every letter in a span
 
-    while (length--) {
-        method = methods[length];
+// let textWrapper = document.querySelector('.ml1 .letters');
+// textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }
-    }
-}());
+//scrollmagic.io
 
-//
+var controller = new ScrollMagic.Controller();
 
+var animation = anime({
+    targets: ".element",
+    scale: [1.5]
+});
 
-
+new ScrollMagic.Scene({
+    triggerElement: '.trigger',
+    duration: "130%",
+    triggerHook: 0.3
+})
+     .setAnime(animation)
+     .addIndicators()
+     .addTo(controller);
