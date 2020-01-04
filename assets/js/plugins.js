@@ -55,7 +55,7 @@ function ups() {
      });
 })();
 
-//use but have some problem with vh to ways observe
+//use but have some problem with vh , two ways observe
 
 $( document ).ready(function() {
      $(window).scroll(function() {
@@ -78,6 +78,20 @@ $( document ).ready(function() {
 });
 
 // and last
+
+$(window).scroll(function() {
+     $('.detection').each(function(){
+          var imagePos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          if (imagePos < topOfWindow+600) {
+               console.log(this);
+          }
+          else   {
+
+               console.log('1234');
+          }
+     });
+});
 
 
 
