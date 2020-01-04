@@ -22,8 +22,17 @@ new ScrollMagic.Scene({
      .addTo(controller);
 
 
-// observer on scroll only for css usage
+// observer on scroll 
 
+
+function ups() {
+     anime({
+          targets: '.detection',
+          easing: 'linear',
+          duration: 2500,
+          translateY: 250
+     });
+}
 (function () {
      const images = document.querySelectorAll('.detection');
 
@@ -32,6 +41,7 @@ new ScrollMagic.Scene({
           entries.forEach(entry => {
                if(entry.intersectionRatio > 0) {
                          entry.target.style.backgroundColor = '#000';
+                         ups();
                }
                else {
                     entry.target.style.backgroundColor = '#eaea';
@@ -44,5 +54,32 @@ new ScrollMagic.Scene({
           observer.observe(image)
      });
 })();
+
+//use but have some problem with vh to ways observe
+
+$( document ).ready(function() {
+     $(window).scroll(function() {
+     let square = document.querySelector('.header__square .section-number');
+     let leftLine = document.querySelector('.decoration__text');
+     let arrowTop = document.querySelector('.arrow-top a');
+     let arrowBottom = document.querySelector('.arrow-bottom a');
+
+          var hT = $('#wealth').offset().top,
+               hH = $('#wealth').outerHeight(),
+               wH = $(window).height(),
+               wS = $(this).scrollTop();
+          if (wS > (hT+(hH-50)-wH) && (hT > wS) && (wS+wH > hT+(hH-50))){
+               square.innerText = '02';
+          leftLine.innerHTML ='OUR GOAL';
+          arrowTop.href = "#partners";
+          arrowBottom.href = "#strong";
+          }
+     });
+});
+
+// and last
+
+
+
 
 
