@@ -20,3 +20,27 @@ new ScrollMagic.Scene({
      .setAnime(animation)
      .addIndicators()
      .addTo(controller);
+
+
+// observer on scroll
+
+(function () {
+     const images = document.querySelectorAll('.detection');
+
+   let  observer = new IntersectionObserver((entries) => {
+
+          entries.forEach(entry => {
+               if(entry.intersectionRatio > 0) {
+                         entry.target.style.backgroundColor = '#000';
+               }
+               else {
+                    entry.target.style.backgroundColor = '#eaea';
+               }
+          })
+
+     });
+
+     images.forEach(image => {
+          observer.observe(image)
+     });
+})();
