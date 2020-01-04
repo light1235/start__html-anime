@@ -93,7 +93,25 @@ $(window).scroll(function() {
      });
 });
 
+//////
 
+function stop() {
+     window.addEventListener("load", function() {
+          window.addEventListener('scroll', () => {
+
+               var d = document.querySelectorAll('.detection');
+               d.forEach(function (elem ) {
+                    var imagePos = d.offsetTop;
+                    var topOfWindow = window.scrollTop;
+                    if (imagePos < topOfWindow+600) {
+                         console.log(elem);
+                    }
+
+               });
+          });
+     });
+
+}stop();
 
 
 
