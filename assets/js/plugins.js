@@ -22,7 +22,7 @@ new ScrollMagic.Scene({
      .addTo(controller);
 
 
-// observer on scroll
+// observer on scroll only for css usage
 
 (function () {
      const images = document.querySelectorAll('.detection');
@@ -44,3 +44,5 @@ new ScrollMagic.Scene({
           observer.observe(image)
      });
 })();
+
+
