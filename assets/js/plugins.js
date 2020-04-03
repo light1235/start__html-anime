@@ -24,7 +24,7 @@ new ScrollMagic.Scene({
 
 // observer on scroll 
 
-
+//можно делать отслеживание анимаций двух форматов просто через if или если нужно в обе стороны то через else
 function ups() {
      anime({
           targets: '.detection',
