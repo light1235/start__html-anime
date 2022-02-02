@@ -1,72 +1,117 @@
-const textWrapper = document.querySelector('.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__title .real-text');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+// Wrap every letter in a span
 
-const DescriptionWrapper = document.querySelector('.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__description .real-text');
-DescriptionWrapper.innerHTML = DescriptionWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+// let textWrapper = document.querySelector('.ml1 .letters');
+// textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime({
-     targets: '.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1',
-     translateY: [200, 0],
-     opacity: [0, 1],
-     rotateZ: [15,0],
-     duration: 1000,
-     delay: 200,
-     easing: 'easeOutExpo',
-     complete() {
-          anime({
-               targets: '.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__title',
-               translateX: [50,0],
-               translateY:[50,0],
-               opacity:[0,1],
-               rotateZ:[5,0],
-               delay:200,
-               duration:1500,
-               easing:'easeOutExpo',
-               begin() {
-                    anime({
-                         targets: '.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__title .real-text',
-                         textShadow: ['10px 3px 10px , 1px 3px 10px ','19px 7px 45px #ffffff, 1px 3px 41px #ffffff','0px 0px 0px #ffffff, 0px 0px 0px #ffffff' ],
-                         duration: 4000,
-                         easing:'easeOutExpo',
-                         complete(){
-                              anime({
-                                   targets: '.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__description .real-text',
-                                   textShadow: ['10px 3px 10px , 1px 3px 10px ','9px 7px 15px #ffffbb, 1px 3px 15px #ffffbb','0px 0px 0px #ffffbb, 0px 0px 0px #ffffbb' ],
-                                   duration: 4000,
-                                   easing:'easeOutExpo',
-                                   complete() {
-                                        anime({
-                                             targets: '.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1',
-                                             translateY:[0,200],
-                                             opacity:[1,0],
-                                             rotateZ:15,
-                                             duration: 1500,
-                                             delay:1000,
-                                             easing:'easeOutExpo',
-                                             complete(){
-                                                  anime({
-                                                       targets: '.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__description .letter, .TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__title',
-                                                       opacity: 0,
-                                                       duration: 10,
-                                                       easing:'easeOutExpo',
-                                                  });
-                                             }
-                                        });
+//scrollmagic.io
 
-                                   }
-                              });
-                         }
-                    });
-               }
-          });
+var controller = new ScrollMagic.Controller();
 
-          anime({
-               targets: '.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__description .letter',
-               opacity: [0,1],
-               duration: 1500,
-               easing:'easeOutExpo',
-               delay: (el, i) => 45 * (i+1),
-          });
-
-     }
+var animation = anime({
+    targets: ".element",
+    scale: [1.5]
 });
+
+new ScrollMagic.Scene({
+    triggerElement: '.trigger',
+    duration: "130%",
+    triggerHook: 0.3
+})
+     .setAnime(animation)
+     .addIndicators()
+     .addTo(controller);
+
+
+// observer on scroll 
+
+//можно делать отслеживание анимаций двух форматов просто через if или если нужно в обе стороны то через else
+function ups() {
+     anime({
+          targets: '.detection',
+          easing: 'linear',
+          duration: 2500,
+          translateY: 250
+     });
+}
+(function () {
+     const images = document.querySelectorAll('.detection');
+
+   let  observer = new IntersectionObserver((entries) => {
+
+          entries.forEach(entry => {
+               if(entry.intersectionRatio > 0) {
+                         entry.target.style.backgroundColor = '#000';
+                         ups();
+               }
+               else {
+                    entry.target.style.backgroundColor = '#eaea';
+               }
+          })
+
+     });
+
+     images.forEach(image => {
+          observer.observe(image)
+     });
+})();
+
+//use but have some problem with vh , two ways observe
+
+$( document ).ready(function() {
+     $(window).scroll(function() {
+     let square = document.querySelector('.header__square .section-number');
+     let leftLine = document.querySelector('.decoration__text');
+     let arrowTop = document.querySelector('.arrow-top a');
+     let arrowBottom = document.querySelector('.arrow-bottom a');
+
+          var hT = $('#wealth').offset().top,
+               hH = $('#wealth').outerHeight(),
+               wH = $(window).height(),
+               wS = $(this).scrollTop();
+          if (wS > (hT+(hH-50)-wH) && (hT > wS) && (wS+wH > hT+(hH-50))){
+               square.innerText = '02';
+          leftLine.innerHTML ='OUR GOAL';
+          arrowTop.href = "#partners";
+          arrowBottom.href = "#strong";
+          }
+     });
+});
+
+// and last
+
+$(window).scroll(function() {
+     $('.detection').each(function(){
+          var imagePos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          if (imagePos < topOfWindow+600) {
+               console.log(this);
+          }
+          else   {
+
+               console.log('1234');
+          }
+     });
+});
+
+//////
+
+function stop() {
+     window.addEventListener("load", function() {
+          window.addEventListener('scroll', () => {
+
+               var d = document.querySelectorAll('.detection');
+               d.forEach(function (elem ) {
+                    var imagePos = d.offsetTop;
+                    var topOfWindow = window.scrollTop;
+                    if (imagePos < topOfWindow+600) {
+                         console.log(elem);
+                    }
+
+               });
+          });
+     });
+
+}stop();
+
+
+

@@ -1,157 +1,83 @@
 :root {
-  --main-color: #ff6f69;
-}
+  --main-color: #ff6f69; }
 
-* {
+> * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
+  > *:before, > *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
 
 *::-webkit-input-placeholder {
   color: #666;
-  opacity: 1;
-}
+  opacity: 1; }
 
 *:-moz-placeholder {
   color: #666;
-  opacity: 1;
-}
+  opacity: 1; }
 
 *::-moz-placeholder {
   color: #666;
-  opacity: 1;
-}
+  opacity: 1; }
 
 *:-ms-input-placeholder {
   color: #666;
-  opacity: 1;
-}
+  opacity: 1; }
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
-  color: #666;
-}
+  color: #666; }
 
 body input:required:valid,
 body textarea:required:valid {
-  color: #666;
-}
+  color: #666; }
 
 html, body {
-  height: 100%;
-}
+  height: 100%; }
 
 body {
   font-size: 16px;
   min-width: 320px;
   position: relative;
   line-height: 1.65;
-  overflow-x: hidden;
-}
+  overflow-x: hidden; }
 
 .img-responsive {
   display: block;
   max-width: 100%;
-  height: auto;
-}
+  height: auto; }
 
 ::selection {
   background-color: #fff;
-  color: #fff;
-}
+  color: #fff; }
 
 a, a:hover, a:focus, a:active {
   outline: none !important;
   text-decoration: none;
-  color: #000;
-}
+  color: #000; }
 
 .grid-container {
   display: grid;
   max-width: 1200px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 /*min-height:32vh;*/
 section {
   width: 100%;
   height: 100vh;
   display: grid;
-  justify-items: center;
-  align-items: center;
-  background-color: #D7E3E7;
-}
+  justify-items: center; }
 
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  padding: 16px 0px 16px 16px;
-  background-size: cover;
-  background: linear-gradient(180deg, #131313 0%, #2D2D2D 100%);
-  border-radius: 32px;
-}
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .group__background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url(../img/crutch-10-2.png);
-  background-position: right;
-  background-repeat: no-repeat;
-}
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
-}
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__top-inner {
-  display: grid;
-  width: max-content;
-  height: 100%;
-  position: relative;
-  grid-template-columns: 1fr max-content;
-  place-items: center;
-  overflow: hidden;
-  grid-gap: 10px;
-}
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__image {
-  display: grid;
-}
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__title {
-  font-family: Clash Display, serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 34.4242px;
-  letter-spacing: 0.005em;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  opacity: 0;
-  padding-right: 60px;
-}
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__title .real-text {
-  position: relative;
-}
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__description {
-  font-family: Satoshi, serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 27px;
-  color: #F9E974;
-}
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__description .real-text {
-  position: relative;
-}
-.TERADEK_LOWER_THIRD_ANIMATION_10 .scene-1 .scene-1__content .content__group-1 .content__top .content__group-inner .content__description .real-text .letter {
-  opacity: 0;
-}
+.element {
+  width: 300px;
+  height: 300px;
+  background-color: #eaea; }
+
+.trigger {
+  width: 100px;
+  height: 30px;
+  background-color: black;
+  margin-bottom: 300px;
+  position: relative; }
