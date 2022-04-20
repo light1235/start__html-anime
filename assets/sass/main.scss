@@ -2,97 +2,31 @@
 @import "_components.scss";
 
 
+ .grid-container {
+ 	display: grid;
+ 	max-width:1200px;
+ 	margin:0 auto;
+ } 
+
+/*min-height:32vh;*/
+
 section {
-   width: 100%;
-   height: 100vh;
-   display: grid;
-   justify-items: center;
-   align-items: center;
-   background-color: #D7E3E7;
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	justify-items: center;
 }
 
-.TERADEK_LOWER_THIRD_ANIMATION_14 {
-   & .scene-1 {
-      & .scene-1__content {
-         display: grid;
-         place-items: end;
-
-         & .content__group-1 {
-            position: relative;
-            display: grid;
-            justify-content: end;
-            align-content: end;
-            overflow: hidden;
-            height: 100%;
-            width: 0%;
-            & .content__group-layer-1 {
-               & .content__title {
-                  width: max-content;
-                  font-family: 'Space Grotesk', serif;
-                  font-style: normal;
-                  font-weight: 700;
-                  font-size: 42px;
-                  line-height: 81px;
-                  letter-spacing: 0.005em;
-                  text-transform: uppercase;
-                  color: black;
-                  padding: 20px 30px;
-                  background-color: #fff;
-               }
-            }
-
-            & .content__group-layer-2 {
-               width: 0%;
-               height: 100%;
-               position:relative;
-               top: -122px;
-               background: #131313;
-               overflow: hidden;
-               & .layer-inner {
-                  display: grid;
-                  grid-template-columns: 90px 1fr;
-                  padding: 28px 30px;
-                  align-items: center;
-                  height: 100%;
-                  & .content__inner{
-                     width: max-content;
-                     & .content__title {
-                        font-family: 'Space Grotesk', serif;
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 32px;
-                        line-height: 1.15;
-                        letter-spacing: 0.005em;
-                        text-transform: uppercase;
-                        color: #FFFFFF;
-                     }
-                     & .content__description {
-                        font-family: 'Jost', serif;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 21px;
-                        //line-height: 32px;
-                        color: #FFFFFF;
-                        opacity: 0.85;
-                     }
-                  }
-                  & .content__image {
-                     width: max-content;
-                     color: white;
-                     display: grid;
-                     position: relative;
-                     & .image-separator {
-                        width: 2px;
-                        height: 60px;
-                        background: #282828;
-                        position: absolute;
-                        top: 0;
-                        right: -15px;
-                     }
-                  }
-               }
-            }
-         }
-      }
-   }
+.element {
+	width: 300px;
+	height: 300px;
+	background-color: #eaea;
+}
+.trigger {
+	width: 100px;
+	height: 30px;
+	background-color: black;
+	margin-bottom: 300px;
+	position: relative;
+	//dsfs1
 }
