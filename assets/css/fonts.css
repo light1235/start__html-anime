@@ -1,17 +1,10 @@
-@font-face {
-  font-family: 'Jost';
-  src: url('../fonts/Jost-Regular.woff2') format('woff2'),
-  url('../fonts/Jost-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+/*@font-face {
+  font-family: "Lato";
+  src: url('/fonts/Lato/Lato-Regular.ttf?1292360400') format('truetype');
+}*/
 
 @font-face {
-  font-family: 'Space Grotesk';
-  src: url('../fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
-  url('../fonts/SpaceGrotesk-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  font-family: "montserrat";
+  font-display: fallback;
+  src: local("montserrat"), url(Montserrat-Regular.woff2) format('woff2');
 }
