@@ -1,83 +1,161 @@
 :root {
-  --main-color: #ff6f69; }
+  --main-color: #ff6f69;
+}
 
-> * {
+* {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-  > *:before, > *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 *::-webkit-input-placeholder {
   color: #666;
-  opacity: 1; }
+  opacity: 1;
+}
 
 *:-moz-placeholder {
   color: #666;
-  opacity: 1; }
+  opacity: 1;
+}
 
 *::-moz-placeholder {
   color: #666;
-  opacity: 1; }
+  opacity: 1;
+}
 
 *:-ms-input-placeholder {
   color: #666;
-  opacity: 1; }
+  opacity: 1;
+}
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
-  color: #666; }
+  color: #666;
+}
 
 body input:required:valid,
 body textarea:required:valid {
-  color: #666; }
+  color: #666;
+}
 
 html, body {
-  height: 100%; }
+  height: 100%;
+}
 
 body {
   font-size: 16px;
   min-width: 320px;
   position: relative;
   line-height: 1.65;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
 
 .img-responsive {
   display: block;
   max-width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 ::selection {
   background-color: #fff;
-  color: #fff; }
+  color: #fff;
+}
 
 a, a:hover, a:focus, a:active {
   outline: none !important;
   text-decoration: none;
-  color: #000; }
+  color: #000;
+}
 
 .grid-container {
   display: grid;
   max-width: 1200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 /*min-height:32vh;*/
 section {
   width: 100%;
   height: 100vh;
   display: grid;
-  justify-items: center; }
+  justify-items: center;
+  align-items: center;
+  background-color: #D7E3E7;
+}
 
-.element {
-  width: 300px;
-  height: 300px;
-  background-color: #eaea; }
-
-.trigger {
-  width: 100px;
-  height: 30px;
-  background-color: black;
-  margin-bottom: 300px;
-  position: relative; }
+.TERADEK_LOWER_THIRD_ANIMATION_17 .scene-1 .scene-1__content {
+  display: grid;
+  place-items: end;
+}
+.TERADEK_LOWER_THIRD_ANIMATION_17 .scene-1 .scene-1__content .content__group-1 {
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  justify-content: end;
+  align-content: end;
+}
+.TERADEK_LOWER_THIRD_ANIMATION_17 .scene-1 .scene-1__content .content__group-1 .layer-group-1 {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  background: linear-gradient(267.15deg, #0F062C 2.7%, #361872 104%);
+  height: 100%;
+  padding: 30px 30px;
+  width: max-content;
+}
+.TERADEK_LOWER_THIRD_ANIMATION_17 .scene-1 .scene-1__content .content__group-1 .content__image {
+  width: max-content;
+}
+.TERADEK_LOWER_THIRD_ANIMATION_17 .scene-1 .scene-1__content .content__group-1 .content__group-inner {
+  position: relative;
+  width: max-content;
+  overflow: hidden;
+}
+.TERADEK_LOWER_THIRD_ANIMATION_17 .scene-1 .scene-1__content .content__group-1 .content__group-inner .content__top-separator {
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 10px 10px;
+  background-image: conic-gradient(#28487d00 90deg, #d7e3e700 90deg 180deg, #617ca200 180deg 270deg, #4d219c 270deg);
+  transform: translateX(-100%);
+}
+.TERADEK_LOWER_THIRD_ANIMATION_17 .scene-1 .scene-1__content .content__group-1 .content__group-inner .content__bottom-separator {
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-size: 10px 10px;
+  background-image: conic-gradient(#28487d00 90deg, #d7e3e700 90deg 180deg, #617ca200 180deg 270deg, #4d219c 270deg);
+  transform: translateX(-100%);
+}
+.TERADEK_LOWER_THIRD_ANIMATION_17 .scene-1 .scene-1__content .content__group-1 .content__group-inner .content__title {
+  font-family: "Space Grotesk", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 60px;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  background: linear-gradient(177.78deg, #FFFFFF 29.66%, rgba(227, 227, 227, 0) 98.13%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  text-align: center;
+}
+.TERADEK_LOWER_THIRD_ANIMATION_17 .scene-1 .scene-1__content .content__group-1 .content__group-inner .content__description {
+  font-family: "Jost", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 40px;
+  color: #FFFFFF;
+  opacity: 0.85;
+  text-align: center;
+}
