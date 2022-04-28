@@ -17,6 +17,7 @@ anime({
      }
 });
 //
+//
 anime({
      targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--right',
      translateX: [200,0],
