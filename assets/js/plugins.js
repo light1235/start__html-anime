@@ -1,107 +1,116 @@
+// Wrap every letter in a span
 
-anime({
-     targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--left',
-     translateX: [-200,0],
-     duration:1000,
-     easing:'easeInOutQuad',
-     opacity: [
-          { value: 1, duration: 10 }
-     ],
-     complete: ()=>{
-          anime({
-               targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--left',
-               easing:'easeInOutQuad',
-               duration:1000,
-               rotate:-90,
-          });
-     }
+// let textWrapper = document.querySelector('.ml1 .letters');
+// textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+//scrollmagic.io
+
+var controller = new ScrollMagic.Controller();
+
+var animation = anime({
+    targets: ".element",
+    scale: [1.5]
 });
-//
-//
-anime({
-     targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--right',
-     translateX: [200,0],
-     duration:1000,
-     easing:'easeInOutQuad',
-     opacity: [
-          { value: 1, duration: 10 }
-     ],
-     complete: ()=>{
-          anime({
-               targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--right',
-               easing:'easeInOutQuad',
-               duration:1000,
-               rotate:-90,
-               complete:()=>{
-                    anime({
-                         targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__group-1',
-                         width:[0+'%',100+'%'],
-                         easing: 'easeInOutExpo',
-                         duration:1300,
-                         padding:['20px 40px']
-                    });
-                    anime({
-                         targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--right',
-                         right:-67,
-                         easing: 'easeInOutExpo',
-                         duration:1300,
-                    });
-                    anime({
-                         targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--left',
-                         left:-67,
-                         easing: 'easeInOutExpo',
-                         duration:1300,
-                         complete: () => {
-                              anime({
-                                   duration:2000,
-                                   complete: () => {
-                                        //time delay
-                                        anime({
-                                             targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--right',
-                                             right:0,
-                                             left: 0,
-                                             easing: 'easeInOutExpo',
-                                             duration:1300,
-                                        });
-                                        anime({
-                                             targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--left',
-                                             right:0,
-                                             left: 0,
-                                             easing: 'easeInOutExpo',
-                                             duration:1300,
-                                             complete: () => {
-                                                  anime({
-                                                       targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--right',
-                                                       easing:'easeInOutQuad',
-                                                       duration:1000,
-                                                       rotate:0,
-                                                       opacity:0,
-                                                  });
-                                                  anime({
-                                                       targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__triangle--left',
-                                                       easing:'easeInOutQuad',
-                                                       duration:1000,
-                                                       rotate:0,
-                                                       opacity:0,
-                                                  });
-                                             }
-                                        });
-                                        anime({
-                                             targets: '.TERADEK_LOWER_THIRD_ANIMATION_25 .scene-1 .scene-1__content .content__group-1',
-                                             width:[100+'%',0+'%'],
-                                             easing: 'easeInOutExpo',
-                                             duration:1300,
-                                             padding:['20px 0px']
-                                        });
-                                   }
-                              });
+
+new ScrollMagic.Scene({
+    triggerElement: '.trigger',
+    duration: "130%",
+    triggerHook: 0.3
+})
+     .setAnime(animation)
+     .addIndicators()
+     .addTo(controller);
 
 
-                         }
-                    });
+// observer on scroll 
+
+//можно делать отслеживание анимаций двух форматов просто через if или если нужно в обе стороны то через else
+function ups() {
+     anime({
+          targets: '.detection',
+          easing: 'linear',
+          duration: 2500,
+          translateY: 250
+     });
+}
+(function () {
+     const images = document.querySelectorAll('.detection');
+
+   let  observer = new IntersectionObserver((entries) => {
+
+          entries.forEach(entry => {
+               if(entry.intersectionRatio > 0) {
+                         entry.target.style.backgroundColor = '#000';
+                         ups();
                }
-          });
+               else {
+                    entry.target.style.backgroundColor = '#eaea';
+               }
+          })
      }
+
+     });
+
+     images.forEach(image => {
+          observer.observe(image)
+     });
+})();
+
+//use but have some problem with vh , two ways observe
+
+$( document ).ready(function() {
+     $(window).scroll(function() {
+     let square = document.querySelector('.header__square .section-number');
+     let leftLine = document.querySelector('.decoration__text');
+     let arrowTop = document.querySelector('.arrow-top a');
+     let arrowBottom = document.querySelector('.arrow-bottom a');
+
+          var hT = $('#wealth').offset().top,
+               hH = $('#wealth').outerHeight(),
+               wH = $(window).height(),
+               wS = $(this).scrollTop();
+          if (wS > (hT+(hH-50)-wH) && (hT > wS) && (wS+wH > hT+(hH-50))){
+               square.innerText = '02';
+          leftLine.innerHTML ='OUR GOAL';
+          arrowTop.href = "#partners";
+          arrowBottom.href = "#strong";
+          }
+     });
 });
 
+// and last
+
+$(window).scroll(function() {
+     $('.detection').each(function(){
+          var imagePos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          if (imagePos < topOfWindow+600) {
+               console.log(this);
+          }
+          else   {
+
+               console.log('1234');
+          }
+     });
+});
+
+//////
+
+function stop() {
+     window.addEventListener("load", function() {
+          window.addEventListener('scroll', () => {
+
+               var d = document.querySelectorAll('.detection');
+               d.forEach(function (elem ) {
+                    var imagePos = d.offsetTop;
+                    var topOfWindow = window.scrollTop;
+                    if (imagePos < topOfWindow+600) {
+                         console.log(elem);
+                    }
+
+               });
+          });
+     });
+
+}stop();
 
