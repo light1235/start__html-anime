@@ -109,3 +109,5 @@ function stop() {
      });
 
 }stop();
+
+let own = () => console.log("123");
