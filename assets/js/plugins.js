@@ -110,3 +110,12 @@ function stop() {
 
 }stop();
 //ss
+const planeGeo = new THREE.PlaneBufferGeometry(30, 30);
+const planeMat = new THREE.MeshPhongMaterial({
+     color: 0x25004D,
+     side: THREE.DoubleSide,
+});
+const Plane = new THREE.Mesh(planeGeo, planeMat);
+Plane.rotation.x = Math.PI * -.5;
+scene.add(Plane);
+
