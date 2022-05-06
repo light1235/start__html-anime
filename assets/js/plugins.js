@@ -1,3 +1,6 @@
+// let textWrapper = document.querySelector('.ml1 .letters');
+// textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
 var controller = new ScrollMagic.Controller();
 
 var animation = anime({
