@@ -119,5 +119,5 @@ const Plane = new THREE.Mesh(planeGeo, planeMat);
 Plane.rotation.x = Math.PI * -.5;
 scene.add(Plane);
 
-//opt
+//optы
 
